@@ -9,7 +9,6 @@ class DynamicProgramming
       2 => [[2], [1,1]],
       3 => [[1,1,1], [2,1], [1,2], [3]]
     }
-
   end
 
   def blair_nums(num)
@@ -105,10 +104,9 @@ class DynamicProgramming
   end
 
   # Helper method for bottom-up implementation
+
   def knapsack_table(weights, values, capacity)
-    knapsack_cache = {
-      0 => Array.new(weights.length, 0)
-    }
+    knapsack_cache = {0 => Array.new(weights.length, 0)}
     (1..capacity).each do |c|
       knapsack_cache[c] = c == weights[0] ? [values[0]] : [0]
     end
